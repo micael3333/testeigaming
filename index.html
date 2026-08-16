@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Sensitive Marketing Academy — iGaming Edition</title>
+
+  <style>
+    :root {
+      --bg: #080a0d;
+      --bg-soft: #0d1117;
+      --card: #11171f;
+      --card-soft: #151c25;
+      --text: #f5f7f8;
+      --muted: #9da7b4;
+      --line: #242e3a;
+      --accent: #9bea6a;
+      --accent-soft: rgba(155, 234, 106, 0.10);
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 50% -10%, rgba(155,234,106,.08), transparent 26%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      background: rgba(8,10,13,.9);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav {
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -.03em;
+      font-size: 15px;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-top: 2px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 22px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #0a0e0b;
+      font-weight: 900;
+      font-size: 14px;
+      transition: .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 74px 0 30px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: #cbd3dc;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      background: rgba(255,255,255,.025);
+    }
+
+    h1 {
+      max-width: 930px;
+      margin: 24px auto 18px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+
+    h1 strong {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #c4ccd5;
+      font-size: clamp(17px, 2vw, 20px);
+    }
+
+    /* VIDEO */
+
+    .video-wrap {
+      width: min(calc(100% - 32px), 980px);
+      margin: 42px auto 0;
+    }
+
+    .video {
+      aspect-ratio: 16 / 9;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(145deg, rgba(155,234,106,.08), transparent 40%),
+        #10151c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 40px 100px rgba(0,0,0,.4);
+    }
+
+    .video::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .play {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #0b100c;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      font-weight: 900;
+      position: relative;
+      z-index: 2;
+    }
+
+    .video-label {
+      position: absolute;
+      bottom: 18px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      color: #9aa5b2;
+      font-size: 12px;
+      z-index: 2;
+    }
+
+    .hero-offer {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .hero-price {
+      font-size: 15px;
+      color: #cfd6de;
+      margin-bottom: 14px;
+    }
+
+    .hero-price strong {
+      color: white;
+      font-size: 24px;
+    }
+
+    .micro {
+      color: #77818e;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 74px 0;
+    }
+
+    .section-head {
+      max-width: 790px;
+      margin-bottom: 30px;
+    }
+
+    .section-head.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .kicker {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4.4vw, 54px);
+      line-height: 1.02;
+      letter-spacing: -.045em;
+      margin: 10px 0 14px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 23px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      letter-spacing: -.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* IDENTIFICAÇÃO */
+
+    .moment {
+      font-size: 21px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .moment-number {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    /* BIG COPY */
+
+    .big-copy {
+      max-width: 880px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .big-copy p {
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.22;
+      letter-spacing: -.03em;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .big-copy span {
+      color: var(--accent);
+    }
+
+    /* APRENDE */
+
+    .learn {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .learn-item {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--bg-soft);
+    }
+
+    .learn-item b {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .learn-item span {
+      color: var(--muted);
+    }
+
+    /* DECISION */
+
+    .decision {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .decision div {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px 10px;
+      text-align: center;
+      font-weight: 900;
+      letter-spacing: .08em;
+      background: #0d1218;
+    }
+
+    .decision div:last-child {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: rgba(155,234,106,.28);
+    }
+
+    /* PROOF */
+
+    .proof {
+      height: 185px;
+      border: 1px dashed #3a4655;
+      border-radius: 14px;
+      margin-bottom: 16px;
+      background: #0b0f14;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #73808d;
+      padding: 20px;
+    }
+
+    /* CAREER */
+
+    .career {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 26px;
+    }
+
+    .pill {
+      padding: 11px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #10161e;
+      color: #dce2e8;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* CPA */
+
+    .opportunity {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      align-items: center;
+      border: 1px solid #293541;
+      border-radius: 26px;
+      padding: 34px;
+      background:
+        radial-gradient(circle at 90% 20%, rgba(155,234,106,.12), transparent 30%),
+        #0f151c;
+    }
+
+    .cpa {
+      border: 1px solid rgba(155,234,106,.25);
+      border-radius: 22px;
+      padding: 28px;
+      text-align: center;
+      background: rgba(155,234,106,.04);
+    }
+
+    .cpa-value {
+      font-size: clamp(58px, 7vw, 86px);
+      line-height: .9;
+      font-weight: 900;
+      letter-spacing: -.05em;
+      color: var(--accent);
+    }
+
+    .cpa-title {
+      margin-top: 12px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .cpa small {
+      display: block;
+      color: #8994a1;
+      margin-top: 8px;
+    }
+
+    /* MODULES */
+
+    .modules {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .module {
+      display: flex;
+      gap: 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 19px;
+      background: #0e141b;
+    }
+
+    .module-number {
+      color: var(--accent);
+      font-weight: 900;
+      min-width: 32px;
+    }
+
+    .module b {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .module span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* KIT */
+
+    .checklist {
+      display: grid;
+      gap: 11px;
+    }
+
+    .check::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 900;
+      margin-right: 9px;
+    }
+
+    /* OFFER */
+
+    .offer {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 26px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 34px;
+      background: linear-gradient(180deg, #141b23, #0c1117);
+    }
+
+    .price {
+      font-size: 68px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -.055em;
+      margin: 12px 0 20px;
+    }
+
+    footer {
+      padding: 38px 0 55px;
+      border-top: 1px solid var(--line);
+      color: #75808c;
+      font-size: 12px;
+    }
+
+    @media (max-width: 850px) {
+      .grid-2,
+      .grid-3,
+      .learn,
+      .modules,
+      .opportunity,
+      .offer {
+        grid-template-columns: 1fr;
+      }
+
+      .decision {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      h1 {
+        font-size: 46px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .wrap {
+        width: min(calc(100% - 22px), var(--max));
+      }
+
+      h1 {
+        font-size: 39px;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+
+      .opportunity,
+      .offer {
+        padding: 21px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+
+    <div class="brand">
+      Sensitive Marketing Academy
+      <small>Uma iniciativa All Markets</small>
+    </div>
+
+    <a href="#oferta" class="btn">
+      Entrar
+    </a>
+
+  </div>
+</header>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="wrap">
+
+      <div class="eyebrow">
+        iGaming Edition · Turma Fundadora
+      </div>
+
+      <h1>
+        Entre no mercado de iGaming como afiliado —
+        e aprenda a operar como <strong>profissional.</strong>
+      </h1>
+
+      <p class="hero-sub">
+        Se você quer entrar nesse mercado, não precisa começar jogando link,
+        comprando tráfego no escuro ou aceitando qualquer oferta que aparece.
+        Primeiro você precisa entender como essa indústria realmente funciona.
+      </p>
+
+    </div>
+
+
+    <div class="video-wrap">
+
+      <div class="video">
+
+        <div class="play">
+          ▶
+        </div>
+
+        <div class="video-label">
+          <span>Assista antes de entrar</span>
+          <span>VSL</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="wrap hero-offer">
+
+      <div class="hero-price">
+        Turma Fundadora · <strong>R$697</strong>
+      </div>
+
+      <a href="#oferta" class="btn">
+        QUERO ENTRAR PARA A ACADEMY
+      </a>
+
+      <div class="micro">
+        Formação profissional. Sem promessa de renda. Sem método secreto.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- IDEIA CENTRAL -->
+
+  <section>
+
+    <div class="wrap big-copy">
+
+      <p>
+        O link de afiliado é a parte fácil.
+        O que separa quem só tenta de quem começa a operar de verdade
+        é entender <span>oferta, público, tráfego, tracking, números e dinheiro.</span>
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- IDENTIFICAÇÃO -->
+
+  <section>
+
+    <div class="wrap">
+
+      <div class="section-head center">
+
+        <div class="kicker">
+          Onde você está agora?
+        </div>
+
+        <h2>
+          Provavelmente em um desses dois pontos.
+        </h2>
+
+      </div>
+
+
+      <div class="grid-2">
+
+        <div class="card">
+
+          <div class="moment-number">
+            01
+          </div>
+
+          <div class="moment">
+            “Quero entrar no iGaming.”
+          </div>
+
+          <p>
+            Você vê o tamanho do mercado, sabe que existe dinheiro circulando,
+            mas ainda não sabe exatamente por onde começar, quem procurar,
+            qual oferta escolher ou como anunciar.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="moment-number">
+            02
+          </div>
+
+          <div class="moment">
+            “Eu já tentei.”
+          </div>
+
+          <p>
+            Você já divulgou link, rodou tráfego ou trabalhou alguma oferta,
+            mas ainda não entende direito tracking, CPA, RevShare,
+            relatórios, atribuição ou se a operação realmente fazia sentido.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- O QUE APRENDE -->
+
+  <section>
+
+    <div class="wrap">
+
+      <div class="section-head">
+
+        <div class="kicker">
+          Do link para a operação
+        </div>
+
+        <h2>
+          Aqui você aprende as coisas que eu gostaria que tivessem me explicado quando comecei.
+        </h2>
+
+        <p>
+          Sem romantizar. Sem fingir que basta subir um anúncio.
+          Você vai entender as decisões que existem por trás da operação.
+        </p>
+
+      </div>
+
+
+      <div class="learn">
+
+        <div class="learn-item">
+          <b>Entenda como a indústria realmente funciona</b>
+          <span>
+            Operadora, afiliado, media buyer, affiliate manager, agência,
+            redes e de onde sai o dinheiro em cada parte da cadeia.
+          </span>
+        </div>
+
+
+        <div class="learn-item">
+          <b>Aprenda a olhar uma oferta antes de aceitar</b>
+          <span>
+            CPA, Revenue Share, Hybrid, aquisição válida,
+            qualificação e condições comerciais.
+          </span>
+        </div>
+
+
+        <div class="learn-item">
+          <b>Leia contrato sem ficar refém do que te disseram no WhatsApp</b>
+          <span>
+            Tracking, relatório, prazo, pagamento, divergência,
+            responsabilidades e cláusulas que mudam completamente uma operação.
+          </span>
+        </div>
+
+
+        <div class="learn-item">
+          <b>Entenda qual público você está comprando</b>
+          <span>
+            Público, contexto, intenção, ângulo, percepção de risco,
+            confiança e comunicação.
+          </span>
+        </div>
+
+
+        <div class="learn-item">
+          <b>Aprenda a criar anúncios que cabem dentro das regras</b>
+          <span>
+            Compliance não precisa transformar sua comunicação em propaganda sem graça.
+            Você vai aprender a construir ângulos respeitando os limites do mercado.
+          </span>
+        </div>
+
+
+        <div class="learn-item">
+          <b>Monte uma campanha pensando na operação inteira</b>
+          <span>
+            Oferta + público + criativo + landing page + mídia + tracking.
+          </span>
+        </div>
+
+
+        <div class="learn-item">
+          <b>Descubra se você está realmente ganhando dinheiro</b>
+          <span>
+            Não basta ver conversão.
+            Você precisa entender custo, aquisição, receita, ROI e break-even.
+          </span>
+        </div>
+
+
+        <div class="learn-item">
+          <b>Saiba exatamente o que fazer com uma campanha</b>
+          <span>
+            Parar de otimizar no “acho”.
+            Aprender a usar os números para decidir o próximo movimento.
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="decision">
+
+        <div>MATAR</div>
+        <div>MANTER</div>
+        <div>AJUSTAR</div>
+        <div>ESCALAR</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROVA -->
+
+  <section>
+
+    <div class="wrap">
+
+      <div class="section-head">
+
+        <div class="kicker">
+          Não estou te ensinando olhando de fora
+        </div>
+
+        <h2>
+          O curso nasce de contato real com a indústria.
+        </h2>
+
+        <p>
+          A ideia não é você acreditar em um texto.
+          É conseguir ver de onde vem o conhecimento que está sendo colocado aqui.
+        </p>
+
+      </div>
+
+
+      <div class="grid-3">
+
+        <div class="card">
+
+          <div class="proof">
+            PRINT CENSURADO<br>
+            REUNIÃO / OTIMIZAÇÃO
+          </div>
+
+          <h3>
+            Discussões reais de mídia
+          </h3>
+
+          <p>
+            Reuniões e conversas relacionadas a campanhas,
+            otimização e operação dentro do ecossistema.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="proof">
+            CONTRATO REAL<br>
+            DADOS SENSÍVEIS OCULTOS
+          </div>
+
+          <h3>
+            Contrato de verdade
+          </h3>
+
+          <p>
+            Você vai aprender a interpretar estruturas comerciais
+            que existem fora da aula — porque elas fazem parte da operação real.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="proof">
+            FEEDBACK REAL<br>
+            PROFISSIONAIS DO MERCADO
+          </div>
+
+          <h3>
+            Conteúdo validado pelo mercado
+          </h3>
+
+          <p>
+            Pessoas que já vivem esse ecossistema reconhecendo
+            a profundidade e o nível técnico das análises.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CARREIRA -->
+
+  <section>
+
+    <div class="wrap">
+
+      <div class="section-head center">
+
+        <div class="kicker">
+          Tem uma carreira escondida aqui
+        </div>
+
+        <h2>
+          Existe uma indústria inteira por trás de um link.
+        </h2>
+
+        <p>
+          Mesmo que você entre pensando em comissão de afiliado,
+          o que você aprende é aquisição digital aplicada a uma indústria real.
+        </p>
+
+      </div>
+
+
+      <div class="career">
+
+        <span class="pill">AFILIADO</span>
+        <span class="pill">MEDIA BUYER</span>
+        <span class="pill">CREATIVE STRATEGY</span>
+        <span class="pill">AFFILIATE MANAGER</span>
+        <span class="pill">AQUISIÇÃO</span>
+        <span class="pill">TRACKING</span>
+        <span class="pill">OPERAÇÃO</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- OPORTUNIDADE -->
+
+  <section>
+
+    <div class="wrap">
+
+      <div class="opportunity">
+
+        <div>
+
+          <div class="kicker">
+            Não termina só na teoria
+          </div>
+
+          <h2>
+            Uma porta de entrada real.
+          </h2>
+
+          <p style="color:var(--muted);font-size:17px;">
+            Alunos elegíveis poderão participar de processos de qualificação
+            para oportunidades comerciais disponibilizadas através da rede da Academy.
+          </p>
+
+          <p style="color:var(--muted);">
+            Ou seja: além de aprender como a operação funciona,
+            você pode sair sabendo qual é o próximo passo para começar a colocar isso em prática.
+          </p>
+
+        </div>
+
+
+        <div class="cpa">
+
+          <div class="cpa-value">
+            €20
+          </div>
+
+          <div class="cpa-title">
+            CPA por aquisição válida*
+          </div>
+
+          <small>
+            + possibilidade de Revenue Share conforme as condições aplicáveis.
+          </small>
+
+        </div>
+
+      </div>
+
+      <div class="micro">
+        *Sujeito à qualificação, aprovação do operador,
+        critérios de aquisição válida e condições comerciais vigentes.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MÓDULOS -->
+
+  <section>
+
+    <div class="wrap">
+
+      <div class="section-head">
+
+        <div class="kicker">
+          Do zero à operação
+        </div>
+
+        <h2>
+          O caminho completo.
+        </h2>
+
+        <p>
+          Primeiro você entende onde está entrando.
+          Depois aprende a adquirir, medir, corrigir e escalar.
+        </p>
+
+      </div>
+
+
+      <div class="modules">
+
+        <div class="module">
+          <div class="module-number">01</div>
+          <div>
+            <b>Como funciona a indústria</b>
+            <span>Quem são os players, como a cadeia funciona e onde está o dinheiro.</span>
+          </div>
+        </div>
+
+
+        <div class="module">
+          <div class="module-number">02</div>
+          <div>
+            <b>Compliance antes do tráfego</b>
+            <span>O que pode, o que não pode e como operar de forma profissional.</span>
+          </div>
+        </div>
+
+
+        <div class="module">
+          <div class="module-number">03</div>
+          <div>
+            <b>Oferta e contrato</b>
+            <span>CPA, RevShare, Hybrid, critérios, tracking, relatórios e pagamentos.</span>
+          </div>
+        </div>
+
+
+        <div class="module">
+          <div class="module-number">04</div>
+          <div>
+            <b>Matemática da operação</b>
+            <span>Entender quanto custa adquirir e quando a conta começa a fazer sentido.</span>
+          </div>
+        </div>
+
+
+        <div class="module">
+          <div class="module-number">05</div>
+          <div>
+            <b>Aquisição e canais</b>
+            <span>Como estruturar mídia e distribuição sem operar no improviso.</span>
+          </div>
+        </div>
+
+
+        <div class="module">
+          <div class="module-number">06</div>
+          <div>
+            <b>Criativos e psicologia</b>
+            <span>Público, ângulo, atenção, risco, confiança e decisão.</span>
+          </div>
+        </div>
+
+
+        <div class="module">
+          <div class="module-number">07</div>
+          <div>
+            <b>Landing pages e funis</b>
+            <span>Conectar anúncio, mensagem e conversão.</span>
+          </div>
+        </div>
+
+
+        <div class="module">
+          <div class="module-number">08</div>
+          <div>
+            <b>Tracking e atribuição</b>
+            <span>Descobrir de onde veio cada resultado e comparar seus dados com o operador.</span>
+          </div>
+        </div>
+
+
+        <div class="module">
+          <div class="module-number">09</div>
+          <div>
+            <b>Otimização</b>
+            <span>Ler números e descobrir onde está o problema ou a oportunidade.</span>
+          </div>
+        </div>
+
+
+        <div class="module">
+          <div class="module-number">10</div>
+          <div>
+            <b>Escala e operação profissional</b>
+            <span>Transformar campanha solta em processo.</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- KIT -->
+
+  <section>
+
+    <div class="wrap">
+
+      <div class="section-head">
+
+        <div class="kicker">
+          Operator Kit
+        </div>
+
+        <h2>
+          Você não recebe só aula.
+        </h2>
+
+        <p>
+          A ideia é ter materiais que você realmente consiga abrir
+          enquanto estiver montando ou analisando uma operação.
+        </p>
+
+      </div>
+
+
+      <div class="grid-2">
+
+        <div class="card">
+
+          <div class="checklist">
+
+            <div class="check">Calculadora de campanhas</div>
+            <div class="check">Planilha de unit economics</div>
+            <div class="check">Checklist para leitura de contrato</div>
+            <div class="check">Checklist de compliance</div>
+            <div class="check">Estrutura básica de tracking</div>
+
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="checklist">
+
+            <div class="check">Modelo de UTMs e SubIDs</div>
+            <div class="check">Matriz de criativos</div>
+            <div class="check">Briefing de anúncio</div>
+            <div class="check">Modelo de relatório</div>
+            <div class="check">Checklist antes de gastar R$1 em mídia</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- AUTORIDADE -->
+
+  <section>
+
+    <div class="wrap">
+
+      <div class="section-head">
+
+        <div class="kicker">
+          Quem está do outro lado
+        </div>
+
+        <h2>
+          Conhecimento de quem também precisou descobrir como essa indústria funciona.
+        </h2>
+
+        <p>
+          Eu não comecei sabendo contrato, tracking, oferta,
+          operação ou como conversar com quem estava do outro lado.
+          Foi entrando no mercado que essas peças começaram a se conectar.
+        </p>
+
+      </div>
+
+
+      <div class="grid-3">
+
+        <div class="card">
+
+          <div class="proof">
+            SUA FOTO
+          </div>
+
+          <h3>
+            Minha trajetória
+          </h3>
+
+          <p>
+            Aqui entra sua história de entrada na indústria.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="proof">
+            REUNIÃO / PROVA
+          </div>
+
+          <h3>
+            Bastidores reais
+          </h3>
+
+          <p>
+            Prints preparados especificamente para publicação,
+            com dados sensíveis removidos.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="proof">
+            INSTAGRAM
+          </div>
+
+          <h3>
+            Veja antes de comprar
+          </h3>
+
+          <p>
+            Acompanhe as análises, conteúdo e bastidores
+            e tire sua própria conclusão sobre o nível do material.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- OFERTA -->
+
+  <section id="oferta">
+
+    <div class="wrap">
+
+      <div class="offer">
+
+        <div>
+
+          <div class="kicker">
+            Turma Fundadora
+          </div>
+
+          <h2>
+            Sensitive Marketing Academy — iGaming Edition
+          </h2>
+
+          <p style="color:var(--muted);font-size:17px;">
+            Para quem quer parar de enxergar o iGaming como um simples link de afiliado
+            e começar a entender como uma operação profissional é construída.
+          </p>
+
+
+          <div class="checklist">
+
+            <div class="check">Formação completa</div>
+            <div class="check">Affiliate Operator Kit</div>
+            <div class="check">Atualizações da formação</div>
+            <div class="check">Materiais operacionais</div>
+            <div class="check">Possibilidade de qualificação para oportunidades comerciais</div>
+
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="kicker">
+            Preço fundador
+          </div>
+
+          <div class="price">
+            R$697
+          </div>
+
+          <a href="#" class="btn">
+            QUERO ENTRAR PARA A ACADEMY
+          </a>
+
+          <div class="micro">
+            Não há garantia de resultados financeiros.
+            Resultados dependem de execução, investimento,
+            oferta, mercado e outras variáveis.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="wrap">
+    <strong style="color:#d9e0e7;">
+      Sensitive Marketing Academy
+    </strong>
+
+    · Uma iniciativa All Markets.
+
+    <br><br>
+
+    Conteúdo educacional voltado à operação profissional em mercados regulados.
+  </div>
+
+</footer>
+
+</body>
+</html>
