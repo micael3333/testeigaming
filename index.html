@@ -344,44 +344,24 @@
     /* IMAGENS DE PROVA SOCIAL E AUTORIDADE */
     .proof-img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
-      object-position: center;
+      height: auto;
+      max-height: 400px;
+      object-fit: contain; /* Garante que a imagem inteira apareça sem ser cortada */
       border: 1px solid var(--border-color);
       border-radius: 8px;
       margin-bottom: 20px;
       display: block;
-      background: rgba(255,255,255,0.02);
-    }
-
-    .proof {
-      height: 200px;
-      margin-bottom: 20px;
-      border: 1px dashed rgba(255,255,255,0.2);
-      border-radius: 8px;
-      background: rgba(255,255,255,0.02);
-      color: #55555a;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      transition: all 0.3s ease;
+      background: var(--bg);
     }
 
     .insta-link {
       display: block;
       height: 100%;
+      transition: all 0.3s ease;
     }
 
-    .insta-link:hover .proof {
+    .insta-link:hover .proof-img {
       border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(203, 163, 101, 0.05);
     }
 
     /* MÓDULOS */
@@ -832,8 +812,8 @@
       <p>Em vez de te ensinar apenas onde clicar no gerenciador, eu quero te mostrar como quem está dentro da cadeia pensa oferta, aquisição, tracking, números e otimização.</p>
 
       <div class="grid2" style="margin-top: 40px;">
-        <img src="reunião google dia 6.jpeg" alt="Bastidores Google Dia 6" class="proof-img">
-        <img src="reunião google dia 5.jpeg" alt="Bastidores Google Dia 5" class="proof-img">
+        <img src="reunião dia 6 completa.jpeg" alt="Bastidores Google Dia 6" class="proof-img">
+        <img src="reunião dia 5 completa.jpeg" alt="Bastidores Google Dia 5" class="proof-img">
       </div>
 
       <div class="micro" style="text-align: center; margin-top: 24px;">
@@ -909,21 +889,18 @@
 
     <div class="grid3">
       <div class="card">
-        <img src="players grande.jpeg" alt="Feedback de Players" class="proof-img">
+        <img src="player roberto igaming.jpeg" alt="Feedback de Roberto iGaming" class="proof-img">
         <h3>Conteúdo fundo de funil</h3>
         <p>Feedback real sobre profundidade e nível técnico das análises.</p>
       </div>
       <div class="card">
-        <img src="players grandes.jpeg" alt="Players do Mercado" class="proof-img">
+        <img src="casal win.jpeg" alt="Gente do Mercado" class="proof-img">
         <h3>Gente do mercado acompanha</h3>
         <p>Conexões públicas reais sem inventar endosso.</p>
       </div>
       <div class="card">
         <a href="https://www.instagram.com/p/DZ-77DTPMkr/?hl=en" target="_blank" class="insta-link">
-          <div class="proof">
-            INSTAGRAM<br>ALL MARKETS<br>
-            <span style="font-size: 10px; font-weight: 400; margin-top: 8px; color: var(--accent);">Clique para acessar</span>
-          </div>
+          <img src="allmarkets.jpeg" alt="Instagram All Markets" class="proof-img">
           <h3>Veja antes de comprar</h3>
           <p>Entre no perfil, veja o conteúdo e tire sua própria conclusão.</p>
         </a>
@@ -983,7 +960,7 @@
         <button class="faq-question">Além do curso, eu preciso investir em tráfego? <div class="faq-icon"></div></button>
         <div class="faq-answer">
           <div class="faq-answer-content">
-            <p>Se quiser rodar a operação na prática, sim. O valor da formação cobre apenas o acesso ao ecossistema educacional.</p>
+            <p>Se quiser rodar a operação na prática, sim. O valor da formação covers apenas o acesso ao ecossistema educacional.</p>
             <p>A ideia é estruturar sua oferta, público, criativo e tracking primeiro, para só depois colocar o seu dinheiro em mídia com clareza e segurança.</p>
           </div>
         </div>
