@@ -19,7 +19,8 @@
       --text-main: #f5f5f7;
       --text-muted: #86868b;
       --border-color: rgba(255, 255, 255, 0.08);
-      --accent: #ffffff;
+      --accent: #cba365; /* Dourado Sutil para conversão */
+      --accent-hover: #b89054;
       --accent-muted: #a1a1a6;
       --max-width: 1080px;
     }
@@ -113,20 +114,22 @@
     
     .nav-links a.highlight {
       color: var(--bg);
-      background: var(--text-main);
+      background: var(--accent);
       padding: 6px 12px;
       border-radius: 4px;
+      transition: all 0.3s ease;
     }
     
     .nav-links a.highlight:hover {
-      background: #d1d1d6;
+      background: var(--accent-hover);
+      box-shadow: 0 0 15px rgba(203, 163, 101, 0.3);
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: var(--text-main);
+      background: var(--accent);
       color: var(--bg);
       padding: 14px 28px;
       border-radius: 4px;
@@ -139,7 +142,8 @@
     }
 
     .btn:hover {
-      background: #d1d1d6;
+      background: var(--accent-hover);
+      box-shadow: 0 0 15px rgba(203, 163, 101, 0.3);
     }
 
     /* ESTRUTURAÇÃO DE SESSÕES */
@@ -336,7 +340,7 @@
       letter-spacing: -0.01em;
     }
 
-    /* 05. MÓDULOS */
+    /* MÓDULOS */
     .module {
       display: flex;
       gap: 20px;
@@ -368,7 +372,7 @@
       line-height: 1.5;
     }
 
-    /* 03 E 08. AUTORIDADE & OFERTA */
+    /* AUTORIDADE & OFERTA */
     .authority, .offer {
       padding: 56px;
       border: 1px solid var(--border-color);
@@ -398,7 +402,7 @@
       letter-spacing: 0.1em;
     }
 
-    /* 04. CPA BOX */
+    /* CPA BOX */
     .cpa {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -433,7 +437,7 @@
       color: #e8e8ed;
     }
 
-    /* 06. CARREIRA PILLS */
+    /* CARREIRA PILLS */
     .career {
       display: flex;
       flex-wrap: wrap;
@@ -453,8 +457,136 @@
       letter-spacing: 0.1em;
       color: var(--text-muted);
     }
+    
+    /* GARANTIA */
+    .guarantee-box {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .shield-icon {
+      width: 56px;
+      height: 56px;
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 1.5;
+      flex-shrink: 0;
+    }
+    
+    .guarantee-box h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    
+    .guarantee-box p {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
 
-    /* OFERTA CHECKLIST */
+    /* FAQ (ACCORDION) */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 24px;
+      background: none;
+      border: none;
+      color: var(--text-main);
+      font-size: 16px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      position: relative;
+      margin-left: 16px;
+    }
+
+    .faq-icon::before, .faq-icon::after {
+      content: "";
+      position: absolute;
+      background-color: var(--text-muted);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-icon::before {
+      width: 12px;
+      height: 2px;
+    }
+
+    .faq-icon::after {
+      width: 2px;
+      height: 12px;
+    }
+
+    .faq-item.active .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+      opacity: 0;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .faq-answer-content {
+      padding: 0 24px 24px 24px;
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .faq-answer-content p {
+      margin-bottom: 12px;
+    }
+
+    .faq-answer-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-answer-content ul {
+      margin-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    /* OFERTA CHECKLIST E BLOCO FINAL */
     .checklist {
       display: grid;
       gap: 16px;
@@ -473,15 +605,14 @@
       width: 16px;
       height: 16px;
       fill: none;
-      stroke: var(--text-main);
-      stroke-width: 2;
+      stroke: var(--accent);
+      stroke-width: 2.5;
       stroke-linecap: round;
       stroke-linejoin: round;
       flex-shrink: 0;
       margin-top: 3px;
     }
 
-    /* BLOCO FINAL */
     .offer {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -560,6 +691,13 @@
         width: 100%;
         padding: 16px;
       }
+      
+      .guarantee-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 24px;
+        gap: 20px;
+      }
 
       .card {
         padding: 24px;
@@ -580,7 +718,7 @@
 
 <body>
 
-<!-- NAVEGAÇÃO ENXUTA (4 PILARES) -->
+<!-- NAVEGAÇÃO ENXUTA -->
 <header>
   <div class="wrap nav">
     <div class="brand">
@@ -643,7 +781,7 @@
   </div>
 </section>
 
-<!-- SESSÃO 02: PÚBLICO (ÂNCORA: FORMAÇÃO) -->
+<!-- SESSÃO 02: PÚBLICO -->
 <section id="formacao" class="bg-alt">
   <div class="wrap">
     <div class="section-head center">
@@ -665,7 +803,7 @@
   </div>
 </section>
 
-<!-- SESSÃO 03: AUTORIDADE (ÂNCORA: MENTOR) -->
+<!-- SESSÃO 03: AUTORIDADE -->
 <section id="mentor">
   <div class="wrap">
     <div class="authority">
@@ -715,7 +853,7 @@
   </div>
 </section>
 
-<!-- SESSÃO 05: MÓDULOS (ÂNCORA: MÓDULOS) -->
+<!-- SESSÃO 05: MÓDULOS -->
 <section id="modulos">
   <div class="wrap">
     <div class="section-head">
@@ -760,7 +898,213 @@
   </div>
 </section>
 
-<!-- SESSÃO 07: OFERTA (ÂNCORA: OFERTA) -->
+<!-- SESSÃO 07: GARANTIA -->
+<section id="garantia">
+  <div class="wrap">
+    <div class="guarantee-box">
+      <svg viewBox="0 0 24 24" class="shield-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      <div>
+        <h3>7 Dias de Garantia Incondicional</h3>
+        <p>Entre, assista às aulas e avalie o nível do conteúdo. Se achar que a metodologia não é para você, basta solicitar o cancelamento dentro do prazo e devolvemos 100% do seu investimento. O risco é todo nosso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SESSÃO 08: FAQ -->
+<section id="faq" class="bg-alt">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="kicker">Perguntas Frequentes</div>
+      <h2>Alinhamento de Expectativas</h2>
+      <p>Respostas diretas sobre a formação, o mercado e as oportunidades comerciais.</p>
+    </div>
+
+    <div class="faq-container">
+      
+      <!-- Item 1 -->
+      <div class="faq-item">
+        <button class="faq-question">Eu estou começando do zero. Isso é para mim? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Sim. A formação foi pensada tanto para quem quer entrar no mercado quanto para quem já opera e trava na hora de otimizar oferta, contrato, mídia e escala.</p>
+            <p>Você não precisa chegar sabendo tudo. A ideia é justamente organizar a visão profissional da operação desde o primeiro dia.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="faq-item">
+        <button class="faq-question">Quanto dinheiro eu preciso para começar? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Não existe um valor fixo. Tudo depende do canal, da oferta, do público e da sua estratégia.</p>
+            <p>A formação te ensina a calcular quanto faz sentido investir, quanto você pode pagar por aquisição e o momento exato em que um teste vira prejuízo. Você não precisa começar com uma operação gigantesca.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="faq-item">
+        <button class="faq-question">Além do curso, eu preciso investir em tráfego? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Se quiser rodar a operação na prática, sim. O valor da formação cobre apenas o acesso ao ecossistema educacional.</p>
+            <p>A ideia é estruturar sua oferta, público, criativo e tracking primeiro, para só depois colocar o seu dinheiro em mídia com clareza e segurança.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="faq-item">
+        <button class="faq-question">Vou receber acesso a uma oferta ou contrato de afiliado? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Alunos elegíveis poderão participar do processo de qualificação para oportunidades comerciais disponibilizadas através da nossa rede, incluindo as condições mostradas nesta página.</p>
+            <p>A aprovação final sempre dependerá dos critérios do operador e das condições vigentes da casa.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="faq-item">
+        <button class="faq-question">Como funciona a condição de €20 CPA? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>A condição divulgada remunera €20 por aquisição válida. Na prática da operação apresentada, essa ativação ocorre a partir do depósito mínimo aplicável (ex: R$40).</p>
+            <p>Lembrando que podem existir critérios adicionais de qualificação e que o acordo está sempre sujeito às regras vigentes da operação.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="faq-item">
+        <button class="faq-question">Eu vou aprender só Meta Ads e Google Ads? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Não. A formação aborda aquisição de forma muito mais ampla.</p>
+            <p>Você vai entender outros ecossistemas como native, mídia programática e outras redes. Vamos te mostrar que a mudança de canal altera completamente o criativo, o funil, a landing page e a otimização.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="faq-item">
+        <button class="faq-question">Eu vou aprender a criar anúncios e criativos? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Sim, unindo a psicologia da atenção com a execução prática.</p>
+            <p>Você vai aprender sobre Hook, corpo, CTA, vídeo, UGC, banner estático, advertorial, native e testes.</p>
+            <p>A ideia não é simplesmente copiar o que estão fazendo, mas entender friamente por que alguém para, presta atenção, confia e clica no seu anúncio.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="faq-item">
+        <button class="faq-question">Vou aprender tracking ou preciso saber isso antes? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Você vai aprender do zero lá dentro.</p>
+            <p>Vamos passar por UTMs, SubIDs, click IDs, postbacks, eventos, atribuição e a conciliação dos seus dados com os relatórios do operador.</p>
+            <p>Ao final, você precisa saber responder a uma única pergunta: <em>Qual campanha, criativo e público colocaram dinheiro no meu bolso?</em></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 9 -->
+      <div class="faq-item">
+        <button class="faq-question">Vou aprender a saber quando escalar uma campanha? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Sim. A matemática da operação é o coração da Academy.</p>
+            <p>Você vai olhar para custo, aquisição, receita, ROI e break-even para tomar decisões baseadas em números e saber a exata hora de: MATAR, MANTER, AJUSTAR ou ESCALAR.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 10 -->
+      <div class="faq-item">
+        <button class="faq-question">Vou aprender a ler contrato de afiliado? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Sim. Você vai aprender a não depender do que alguém te falou no WhatsApp.</p>
+            <p>Ensinamos a interpretar entrelinhas de CPA, Revenue Share, Hybrid, critérios de aquisição válida, divergências de relatórios, pagamentos e cláusulas que podem corroer sua margem.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 11 -->
+      <div class="faq-item">
+        <button class="faq-question">Preciso ter experiência com tráfego pago? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Não necessariamente. Quem tem experiência vai avançar mais rápido na parte de mídia.</p>
+            <p>Mas a formação exige que você entenda a lógica da indústria, contratos e oferta antes mesmo de pensar em abrir um gerenciador de anúncios.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 12 -->
+      <div class="faq-item">
+        <button class="faq-question">Esse curso é para aprender a apostar? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Não. Não é um curso de apostas, nem de "grupos de sinais".</p>
+            <p>É uma formação voltada estritamente aos bastidores do mercado: aquisição, mídia, oferta, contratos, tracking, compliance e operação profissional de afiliado dentro da indústria de iGaming.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 13 -->
+      <div class="faq-item">
+        <button class="faq-question">Por quanto tempo eu vou ter acesso? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>O acesso à formação é de 12 meses.</p>
+            <p>Durante esse período você poderá rever as aulas e acessar todos os materiais e bônus incluídos na edição adquirida.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 14 -->
+      <div class="faq-item">
+        <button class="faq-question">As aulas serão atualizadas? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Sim. É um mercado dinâmico.</p>
+            <p>A formação receberá atualizações relevantes de conteúdo acompanhando mudanças de canais, compliance, tracking e movimentações vitais da operação no mercado.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 15 -->
+      <div class="faq-item">
+        <button class="faq-question">A oportunidade comercial é garantida? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Não. O que garantimos é o nível e a entrega do produto educacional.</p>
+            <p>A aprovação em oportunidades comerciais depende exclusivamente do seu nível de qualificação, dos critérios de segurança do operador e das condições de mercado no momento da avaliação. Não prometemos contratos automáticos.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 16 -->
+      <div class="faq-item">
+        <button class="faq-question">Quanto eu posso ganhar? <div class="faq-icon"></div></button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Não existe valor garantido nem promessa de renda fácil.</p>
+            <p>O seu resultado depende da sua execução, do seu capital, da eficiência do seu criativo e da sua capacidade técnica de otimizar a campanha. A formação te entrega a matemática para saber identificar quando uma operação é escalável e lucrativa.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SESSÃO 09: OFERTA -->
 <section id="oferta">
   <div class="wrap">
     <div class="offer">
@@ -798,6 +1142,33 @@
     Conteúdo educacional voltado à operação profissional em mercados regulados.
   </div>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        const answer = item.querySelector('.faq-answer');
+
+        // Fecha todos os outros accordions ao clicar em um novo
+        faqItems.forEach(otherItem => {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-answer').style.maxHeight = null;
+        });
+
+        // Se não estava ativo, abre o clicado
+        if (!isActive) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
