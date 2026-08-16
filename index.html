@@ -1,353 +1,156 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sensitive Marketing Academy — iGaming Edition</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --bg-dark: #0a0b0d;
-      --card-bg: #121418;
-      --card-border: #22262f;
-      --accent-green: #22c55e;
-      --accent-green-hover: #16a34a;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      line-height: 1.6;
-      padding-bottom: 80px;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Header */
-    header {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--card-border);
-    }
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand {
-      font-weight: 800;
-      font-size: 1.1rem;
-      letter-spacing: -0.5px;
-    }
-    .brand span {
-      color: var(--text-muted);
-      font-weight: 400;
-      font-size: 0.85rem;
-      display: block;
-    }
-
-    /* Badge */
-    .badge {
-      display: inline-block;
-      background: rgba(34, 197, 94, 0.1);
-      color: var(--accent-green);
-      border: 1px solid rgba(34, 197, 94, 0.2);
-      padding: 6px 16px;
-      border-radius: 100px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 24px;
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 80px 0 60px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -1px;
-      margin-bottom: 24px;
-    }
-    .hero h1 span {
-      color: var(--accent-green);
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      max-width: 720px;
-      margin: 0 auto 36px;
-    }
-
-    /* Buttons */
-    .btn-primary {
-      display: inline-block;
-      background-color: var(--accent-green);
-      color: #000;
-      font-weight: 800;
-      font-size: 1.1rem;
-      padding: 18px 36px;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      box-shadow: 0 10px 25px -5px rgba(34, 197, 94, 0.3);
-    }
-    .btn-primary:hover {
-      background-color: var(--accent-green-hover);
-      transform: translateY(-2px);
-    }
-    .sub-btn {
-      display: block;
-      margin-top: 12px;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* Sections General */
-    section {
-      padding: 60px 0;
-    }
-    .section-title {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 16px;
-      letter-spacing: -0.5px;
-    }
-    .section-subtitle {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      margin-bottom: 40px;
-    }
-
-    /* Highlights Banner (Contrato Blaze) */
-    .highlight-card {
-      background: linear-gradient(135deg, rgba(34,197,94,0.1) 0%, rgba(18,20,24,1) 100%);
-      border: 1px solid var(--accent-green);
-      border-radius: 20px;
-      padding: 40px;
-      margin: 40px 0;
-    }
-    .highlight-card h3 {
-      color: var(--accent-green);
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-    }
-
-    /* Cards Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 28px;
-    }
-    .card h4 {
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-      color: var(--text-main);
-    }
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* Módulos com Lista Prática */
-    .module-number {
-      color: var(--accent-green);
-      font-weight: 800;
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-    }
-
-    /* Proof Section (Google) */
-    .proof-box {
-      background-color: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 40px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: center;
-    }
-    @media (max-width: 768px) {
-      .proof-box { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 2.1rem; }
-    }
-    .proof-placeholder {
-      background: #1a1d24;
-      border: 2px dashed var(--card-border);
-      border-radius: 12px;
-      height: 250px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: var(--text-muted);
-      text-align: center;
-      padding: 20px;
-    }
-
-    /* Footnote */
-    .disclaimer {
-      font-size: 0.8rem;
-      color: #64748b;
-      margin-top: 20px;
-      line-height: 1.4;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        SENSITIVE MARKETING ACADEMY
-        <span>UMA INICIATIVA ALL MARKETS</span>
-      </div>
-      <a href="#comprar" class="btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">ENTRAR</a>
-    </div>
-  </header>
-
-  <main class="container">
+<!-- SEÇÃO: O QUE VOCÊ REALMENTE VAI APRENDER -->
+<section style="background-color: #0d0d0d; color: #ffffff; padding: 80px 20px; font-family: 'Inter', sans-serif;">
+  <div style="max-width: 1100px; margin: 0 auto;">
     
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="badge">TURMA FUNDADORA · iGAMING EDITION</div>
-      <h1>PARE DE PERDER DINHEIRO <span>SUBINDO CAMPANHA NO ESCURO.</span></h1>
-      <p>Aprenda a operar no iGaming com quem senta na mesa com o Google para otimizar as maiores casas do mercado — e saia do curso com acesso a um <strong>contrato exclusivo de €20 por depósito</strong>.</p>
-      
-      <a href="#comprar" class="btn-primary">QUERO ACESSO À OPERAÇÃO REAL — R$ 697</a>
-      <span class="sub-btn">Formação profissional. Sem promessa de renda fácil. Sem "método secreto".</span>
-    </section>
-
-    <!-- O MAIOR ATALHO (BLAZE / OFERTA) -->
-    <div class="highlight-card">
-      <h3>🔥 SÓ ESSA CONDIÇÃO JÁ PAGA O CURSO 10 VEZES</h3>
-      <p style="font-size: 1.1rem; margin-bottom: 16px;">O maior problema do afiliado iniciante é pegar oferta ruim, tomar calote de network e aceitar CPA de esmola.</p>
-      <p style="color: var(--text-muted);">Ao entrar para a Turma Fundadora, alunos elegíveis ganham o caminho para operar com <strong>contrato direto da Blaze: €20 de CPA a cada R$40 depositados</strong> (+ possibilidade de Revenue Share). Você já entra no jogo com uma condição comercial que 99% dos afiliados nem sabem que existe.</p>
+    <!-- HEADER DA SEÇÃO -->
+    <div style="text-align: center; margin-bottom: 60px;">
+      <span style="color: #00ff66; font-size: 0.9rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">
+        Sem nomes de matérias de faculdade · Apenas a operação como ela é
+      </span>
+      <h2 style="font-size: 2.5rem; font-weight: 800; margin-top: 10px; margin-bottom: 15px; line-height: 1.2;">
+        O QUE VOCÊ REALMENTE VAI APRENDER
+      </h2>
+      <p style="color: #a0a0a0; font-size: 1.1rem; max-width: 750px; margin: 0 auto; line-height: 1.6;">
+        Cada etapa resolve um gargalo exato onde você perde dinheiro hoje. O iGaming não é só Meta e Google: é uma operação completa de aquisição.
+      </p>
     </div>
 
-    <!-- PROVA TÉCNICA (GOOGLE) -->
-    <section>
-      <div class="proof-box">
-        <div>
-          <div class="badge" style="margin-bottom: 12px;">BASTIDOR DE GENTE GRANDE</div>
-          <h2 style="font-size: 1.8rem; margin-bottom: 16px;">Eu não aprendi iGaming assistindo vídeo no YouTube.</h2>
-          <p style="color: var(--text-muted); margin-bottom: 16px;">Enquanto o mercado te ensina a "subir anúncio e torcer", eu estou reunido com a equipe técnica do Google Ads ajustando a operação e o tráfego das maiores casas de aposta do Brasil (como a Blaze).</p>
-          <p style="color: var(--text-muted);">O que eu te entrego aqui não é teoria de palco: é o bastidor real de quem ajusta a engrenagem que movimenta milhões todos os meses.</p>
-        </div>
-        <div class="proof-placeholder">
-          <span style="font-size: 2rem; margin-bottom: 8px;">📸</span>
-          <strong>[PRINT REUNIÃO GOOGLE / BLAZE]</strong>
-          <span style="font-size: 0.8rem; margin-top: 6px;">Insira aqui o print do e-mail, reunião do Google ou painel técnico</span>
+    <!-- GRID DOS PILARES -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+
+      <!-- PILAR 1 -->
+      <div style="background-color: #141414; border: 1px solid #222222; border-radius: 8px; padding: 30px;">
+        <span style="color: #00ff66; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">Módulo 01 · Compliance & Contingência</span>
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin: 12px 0; color: #ffffff;">
+          Aprenda a anunciar dentro das regras sem transformar sua campanha em algo que ninguém clica
+        </h3>
+        <p style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.6;">
+          Chega de promessa infantil de "zero bloqueios". Entenda os limites reais das plataformas, as exigências de compliance e como alinhar ângulos e criativos de alta performance sem queimar suas contas nem tomar corte do operador.
+        </p>
+      </div>
+
+      <!-- PILAR 2 -->
+      <div style="background-color: #141414; border: 1px solid #222222; border-radius: 8px; padding: 30px;">
+        <span style="color: #00ff66; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">Módulo 02 · Cláusulas & Contratos</span>
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin: 12px 0; color: #ffffff;">
+          Aprenda a ler o contrato antes que o contrato leia você
+        </h3>
+        <p style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.6;">
+          Nunca mais dependa do que o affiliate manager te fala no WhatsApp. Domine as regras de CPA, RevShare e Hybrid, critérios de aquisição válida, prazos de pagamento e as cláusulas escondidas que comem a sua margem no final do mês.
+        </p>
+      </div>
+
+      <!-- PILAR 3 -->
+      <div style="background-color: #141414; border: 1px solid #222222; border-radius: 8px; padding: 30px;">
+        <span style="color: #00ff66; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">Módulo 03 · A Matemática da Operação</span>
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin: 12px 0; color: #ffffff;">
+          Aprenda a descobrir se uma campanha realmente dá dinheiro
+        </h3>
+        <p style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+          Sem teórica chata de métricas. Aprenda a cruzar CPM, CPC, CTR, FTD e Break-even para responder de forma fria:
+        </p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; font-weight: 800; font-size: 0.8rem;">
+          <span style="background-color: #3b1212; color: #ff4d4d; border: 1px solid #ff4d4d; padding: 4px 10px; border-radius: 4px;">MATAR</span>
+          <span style="background-color: #3b2e12; color: #ffcc00; border: 1px solid #ffcc00; padding: 4px 10px; border-radius: 4px;">MANTER</span>
+          <span style="background-color: #12293b; color: #3399ff; border: 1px solid #3399ff; padding: 4px 10px; border-radius: 4px;">AJUSTAR</span>
+          <span style="background-color: #123b1c; color: #00ff66; border: 1px solid #00ff66; padding: 4px 10px; border-radius: 4px;">ESCALAR</span>
         </div>
       </div>
-    </section>
 
-    <!-- MÓDULOS "RASGADOS" -->
-    <section>
-      <h2 class="section-title">O que você REALMENTE vai aprender:</h2>
-      <p class="section-subtitle">Sem nome de matéria de faculdade. Cada etapa resolve um gargalo onde você perde dinheiro hoje.</p>
-
-      <div class="grid">
-        <div class="card">
-          <div class="module-number">MÓDULO 01</div>
-          <h4>Como anunciar sem perder a conta a cada 15 minutos</h4>
-          <p>Compliance real e contingência. O segredo para rodar tráfego pesado e escala sem viver no limbo dos bloqueios do Meta e Google.</p>
-        </div>
-
-        <div class="card">
-          <div class="module-number">MÓDULO 02</div>
-          <h4>A conta do iGaming revelada</h4>
-          <p>Aprenda a matemática da operação. Descubra exatamente quanto você pode pagar por clique e CPM para colocar R$ 1.000 no bolso sem ficar no zero a zero.</p>
-        </div>
-
-        <div class="card">
-          <div class="module-number">MÓDULO 03</div>
-          <h4>Parem de roubar o seu tráfego</h4>
-          <p>Como configurar tracking profissional (UTMs, SubIDs e Webhooks) para garantir que cada conversão gerada caia no seu bolso e não no "limbo" da casa.</p>
-        </div>
-
-        <div class="card">
-          <div class="module-number">MÓDULO 04</div>
-          <h4>Como ler contrato sem entrar vendido</h4>
-          <p>Análise fria de cláusulas de CPA, RevShare e Hybrid. Saiba exatamente o que é uma "aquisição válida" para não trabalhar de graça para o operador.</p>
-        </div>
-
-        <div class="card">
-          <div class="module-number">MÓDULO 05</div>
-          <h4>Atenção, Clique e Conversão</h4>
-          <p>Ângulos de anúncios e páginas de alta conversão. Como fazer o usuário parar o feed, confiar na oferta e realizar o primeiro depósito (FTD).</p>
-        </div>
-
-        <div class="card">
-          <div class="module-number">MÓDULO 06</div>
-          <h4>Chega de otimizar no "Acho"</h4>
-          <p>Tratamento de dados e tomada de decisão: saiba exatamente o momento exato de Matar, Manter, Ajustar ou Escalar uma campanha.</p>
-        </div>
+      <!-- PILAR 4 -->
+      <div style="background-color: #141414; border: 1px solid #222222; border-radius: 8px; padding: 30px;">
+        <span style="color: #00ff66; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">Módulo 04 · Pesquisa Estratégica</span>
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin: 12px 0; color: #ffffff;">
+          Pare de copiar campanha. Aprenda a encontrar o motivo pelo qual alguém deposita
+        </h3>
+        <p style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.6;">
+          Clonar anúncio dos outros só te faz chegar atrasado no leilão. Aprenda a mapear público, identificar dores, contexto e construir uma hipótese própria de aquisição para criar campanhas originais e lucrativas.
+        </p>
       </div>
-    </section>
 
-    <!-- SOCIAL PROOF / PLAYERS -->
-    <section style="text-align: center;">
-      <h2 class="section-title">O próprio mercado acompanha esse trabalho.</h2>
-      <p class="section-subtitle">Veja a reação de grandes players e profissionais do setor sobre o nível das nossas análises.</p>
-      
-      <div class="grid" style="margin-top: 30px;">
-        <div class="proof-placeholder" style="height: 180px;">
-          <span>💬</span>
-          <strong>[PRINT FEEDBACK / INSTAGRAM]</strong>
-          <span style="font-size: 0.8rem;">Comentários ou DM de players do setor te validando</span>
-        </div>
-        <div class="proof-placeholder" style="height: 180px;">
-          <span>💬</span>
-          <strong>[PRINT RECONHECIMENTO TÉCNICO]</strong>
-          <span style="font-size: 0.8rem;">Análise avançada elogiada por quem já roda pesado</span>
-        </div>
+      <!-- PILAR 5 -->
+      <div style="background-color: #141414; border: 1px solid #222222; border-radius: 8px; padding: 30px;">
+        <span style="color: #00ff66; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">Módulo 05 · Psicologia do Anúncio</span>
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin: 12px 0; color: #ffffff;">
+          Antes do clique existe uma decisão humana
+        </h3>
+        <p style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.6;">
+          Aprenda a mecânica da atenção, curiosidade e percepção de risco. Entenda como construir confiança, framing e quebra de objeções para que você saiba exatamente por que um criativo vende ou morre.
+        </p>
       </div>
-    </section>
 
-    <!-- OFERTA FINAL -->
-    <section id="comprar" style="text-align: center; background-color: var(--card-bg); border-radius: 24px; padding: 60px 24px; border: 1px solid var(--card-border); margin-top: 40px;">
-      <div class="badge">OPORTUNIDADE DE TURMA FUNDADORA</div>
-      <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 16px;">Pare de tentar descobrir tudo sozinho.</h2>
-      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 30px;">Entre para a Sensitive Marketing Academy, aprenda a operar com nível técnico avançado e destrave portas comerciais que o mercado esconde de você.</p>
-      
-      <div style="font-size: 3rem; font-weight: 800; color: var(--accent-green); margin-bottom: 8px;">R$ 697</div>
-      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Acesso imediato à formação + Affiliate Operator Kit completo</p>
-
-      <a href="#" class="btn-primary" style="font-size: 1.2rem; width: 100%; max-width: 450px;">GARANTIR MINHA VAGA NA OPERAÇÃO</a>
-
-      <div class="disclaimer" style="max-width: 600px; margin: 30px auto 0;">
-        *A aprovação para o contrato comercial citado está sujeita aos critérios de qualificação e análise do operador. Não há promessa ou garantia de ganhos financeiros. Resultados dependem de execução, caixa e mercado.
+      <!-- PILAR 6 -->
+      <div style="background-color: #141414; border: 1px solid #222222; border-radius: 8px; padding: 30px;">
+        <span style="color: #00ff66; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">Módulo 06 · Criativo na Prática</span>
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin: 12px 0; color: #ffffff;">
+          Engenharia de Criativos: Hook, Corpo e CTA
+        </h3>
+        <p style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.6;">
+          Domine a execução prática de formatos de alta conversão: UGC, vídeos nativos, banners estáticos, advertoriais e variação de testes rápida de acordo com a maturidade do público e a fase do funil.
+        </p>
       </div>
-    </section>
 
-  </main>
+      <!-- PILAR 7 -->
+      <div style="background-color: #141414; border: 1px solid #222222; border-radius: 8px; padding: 30px;">
+        <span style="color: #00ff66; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">Módulo 07 · Diversificação de Canais</span>
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin: 12px 0; color: #ffffff;">
+          Meta e Google são só duas portas de entrada
+        </h3>
+        <p style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.6;">
+          Aprenda a olhar a internet como uma rede de tráfego. Saiba como operar Meta, Google, Native Ads, Mídia Programática e Redes Popunder/Banner (MGID, TrafficJunky) ajustando a oferta para cada canal.
+        </p>
+      </div>
 
-</body>
-</html>
+      <!-- PILAR 8 -->
+      <div style="background-color: #141414; border: 1px solid #222222; border-radius: 8px; padding: 30px;">
+        <span style="color: #00ff66; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">Módulo 08 · Funis e Landings</span>
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin: 12px 0; color: #ffffff;">
+          Não jogue clique caro numa página ruim
+        </h3>
+        <p style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.6;">
+          Estruturação operacional de Prelanders, Landing Pages e Advertoriais. Aprenda a alinhar a promessa do criativo com a página, além de otimizar velocidade, UX mobile e taxa de retenção até o botão de depósito.
+        </p>
+      </div>
+
+      <!-- PILAR 9 -->
+      <div style="background-color: #141414; border: 1px solid #222222; border-radius: 8px; padding: 30px;">
+        <span style="color: #00ff66; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">Módulo 09 · Tracking e Atribuição</span>
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin: 12px 0; color: #ffffff;">
+          Se você não sabe de onde veio a conversão, não sabe o que escalar
+        </h3>
+        <p style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.6;">
+          Aprenda a rastrear cada centavo da sua operação. Configuração técnica de UTMs, SubIDs, Pixels, Webhooks e Postback para conciliar seus números com a plataforma do operador sem perder dados.
+        </p>
+      </div>
+
+      <!-- PILAR 10 -->
+      <div style="background-color: #141414; border: 1px solid #222222; border-radius: 8px; padding: 30px;">
+        <span style="color: #00ff66; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">Módulo 10 · Otimização Sem Achismo</span>
+        <h3 style="font-size: 1.3rem; font-weight: 700; margin: 12px 0; color: #ffffff;">
+          Transforme testes aleatórios em uma rotina de operação real
+        </h3>
+        <p style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.6;">
+          Saiba exatamente quando cortar placements zerados, desativar criativos sem performance, refinar públicos e executar escalas horizontais e verticais com caixa protegido.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- PILAR 11: A OPERAÇÃO COMPLETA (DESTAQUE FINAL DO CURSO) -->
+    <div style="margin-top: 30px; background: linear-gradient(135deg, #141414 0%, #1a291e 100%); border: 1px solid #00ff66; border-radius: 8px; padding: 35px; text-align: center;">
+      <span style="color: #00ff66; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">
+        A Transformação Final · Módulo 11
+      </span>
+      <h3 style="font-size: 1.8rem; font-weight: 800; margin: 12px 0; color: #ffffff;">
+        Você não termina aprendendo a subir campanha. Você termina aprendendo a OPERAR.
+      </h3>
+      <p style="color: #d0d0d0; font-size: 1.05rem; max-width: 800px; margin: 0 auto 20px auto; line-height: 1.6;">
+        O ciclo completo unificado: <strong style="color: #00ff66;">Oferta → Público → Criativo → Canal → Landing Page → Tracking → Métricas → Otimização → Escala</strong>.
+      </p>
+      <p style="color: #a0a0a0; font-size: 0.9rem;">
+        Saia de alguém que apenas roda links para um operador profissional de tráfego e aquisição de iGaming.
+      </p>
+    </div>
+
+  </div>
+</section>
