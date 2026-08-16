@@ -14,8 +14,8 @@
   <style>
     :root {
       --bg: #050505;
-      --bg-surface: #0a0a0a;
-      --card-bg: #111111;
+      --bg-surface: #0c0c0c;
+      --card-bg: #121212;
       --text-main: #f5f5f7;
       --text-muted: #86868b;
       --border-color: rgba(255, 255, 255, 0.08);
@@ -54,7 +54,7 @@
       padding: 0 24px;
     }
 
-    /* HEADER E NAVEGAÇÃO */
+    /* HEADER E NAVEGAÇÃO ENXUTA */
     header {
       position: sticky;
       top: 0;
@@ -107,8 +107,19 @@
       transition: color 0.3s ease;
     }
 
-    .nav-links a:hover, .nav-links a.highlight {
+    .nav-links a:hover {
       color: var(--text-main);
+    }
+    
+    .nav-links a.highlight {
+      color: var(--bg);
+      background: var(--text-main);
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+    
+    .nav-links a.highlight:hover {
+      background: #d1d1d6;
     }
 
     .btn {
@@ -131,9 +142,15 @@
       background: #d1d1d6;
     }
 
-    /* SEÇÕES BASE */
+    /* ESTRUTURAÇÃO DE SESSÕES */
     section {
-      padding: 90px 0;
+      padding: 100px 0;
+    }
+    
+    .bg-alt {
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
     }
 
     .section-head {
@@ -178,9 +195,9 @@
       font-weight: 400;
     }
 
-    /* HERO SECTION */
+    /* 01. HERO */
     .hero {
-      padding: 70px 0 40px;
+      padding: 70px 0 60px;
       text-align: center;
     }
 
@@ -319,14 +336,14 @@
       letter-spacing: -0.01em;
     }
 
-    /* MÓDULOS DA FORMAÇÃO */
+    /* 05. MÓDULOS */
     .module {
       display: flex;
       gap: 20px;
       padding: 24px;
       border: 1px solid var(--border-color);
       border-radius: 8px;
-      background: var(--bg-surface);
+      background: var(--bg);
     }
 
     .num {
@@ -351,7 +368,7 @@
       line-height: 1.5;
     }
 
-    /* AUTORIDADE E PROVAS SOCIAIS */
+    /* 03 E 08. AUTORIDADE & OFERTA */
     .authority, .offer {
       padding: 56px;
       border: 1px solid var(--border-color);
@@ -381,7 +398,7 @@
       letter-spacing: 0.1em;
     }
 
-    /* CAIXA DE CPA */
+    /* 04. CPA BOX */
     .cpa {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -390,14 +407,14 @@
       padding: 56px;
       border-radius: 12px;
       border: 1px solid var(--border-color);
-      background: var(--bg-surface);
+      background: var(--card-bg);
     }
 
     .cpa-box {
       padding: 40px 32px;
       border-radius: 8px;
       text-align: center;
-      background: var(--card-bg);
+      background: var(--bg);
       border: 1px solid var(--border-color);
     }
 
@@ -416,7 +433,7 @@
       color: #e8e8ed;
     }
 
-    /* PILLS CARREIRA */
+    /* 06. CARREIRA PILLS */
     .career {
       display: flex;
       flex-wrap: wrap;
@@ -437,7 +454,7 @@
       color: var(--text-muted);
     }
 
-    /* CHECKLIST DE OFERTA */
+    /* OFERTA CHECKLIST */
     .checklist {
       display: grid;
       gap: 16px;
@@ -464,7 +481,7 @@
       margin-top: 3px;
     }
 
-    /* BLOCO DE OFERTA */
+    /* BLOCO FINAL */
     .offer {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -517,7 +534,7 @@
       }
 
       .nav-links {
-        gap: 16px;
+        gap: 12px;
         flex-wrap: wrap;
         justify-content: center;
       }
@@ -563,6 +580,7 @@
 
 <body>
 
+<!-- NAVEGAÇÃO ENXUTA (4 PILARES) -->
 <header>
   <div class="wrap nav">
     <div class="brand">
@@ -570,17 +588,18 @@
       <small>Uma iniciativa All Markets</small>
     </div>
     <nav class="nav-links">
+      <a href="#formacao">A Formação</a>
+      <a href="#mentor">O Mentor</a>
       <a href="#modulos">Módulos</a>
-      <a href="#autoridade">Autoridade</a>
-      <a href="#oferta" class="highlight">Oferta</a>
+      <a href="#oferta" class="highlight">Garantir Vaga</a>
     </nav>
   </div>
 </header>
 
 <main>
 
-<!-- HERO SECTION -->
-<section class="hero">
+<!-- SESSÃO 01: HERO -->
+<section id="inicio" class="hero">
   <div class="wrap">
     <div class="kicker">iGaming Edition · Formação Operacional</div>
     
@@ -591,11 +610,8 @@
 
   <div class="wrap">
     <div class="video">
-      <!-- Ícone SVG Botão de Play -->
       <div class="play-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M5 3l14 9-14 9V3z"></path>
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z"></path></svg>
       </div>
     </div>
   </div>
@@ -604,10 +620,8 @@
     <div class="hero-exclusivity">
       E saia do curso com acesso a um contrato exclusivo com casa regulamentada onde ganha <strong>€20 por 40 reais depositados</strong>.
       <span>
-        <!-- Ícone SVG de Cadeado Minimalista -->
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
         </svg>
         Acesso restrito: Pouquíssimas pessoas no mercado sabem que essa estrutura existe
       </span>
@@ -623,15 +637,14 @@
       </div>
       <a href="#oferta" class="btn">Quero aprender a operar</a>
       <div class="micro">
-        Formação profissional. Sem promessa de renda fácil. Sem “método secreto”.
+        Formação profissional. Sem promessa de renda fácil.
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- PARA QUEM É O CURSO -->
-<section style="border-top: 1px solid var(--border-color); background: var(--bg-surface);">
+<!-- SESSÃO 02: PÚBLICO (ÂNCORA: FORMAÇÃO) -->
+<section id="formacao" class="bg-alt">
   <div class="wrap">
     <div class="section-head center">
       <div class="kicker">Público & Alinhamento</div>
@@ -644,18 +657,16 @@
         <h3>Do Iniciante ao Avançado</h3>
         <p>Serve para quem está tentando entrar no mercado agora do jeito certo, ou para quem já opera, mas sofreu calotes de casas não regulamentadas, teve repasses cortados ou não consegue entender a matemática do tráfego.</p>
       </div>
-
       <div class="card">
         <h3>Carreira ou Levantamento de Caixa</h3>
-        <p>Não importa se seu objetivo é usar a operação para construir caixa rápido no curto prazo ou se você enxerga uma profissão de longo prazo na indústria. Eu te ensino a mecânica e a operação real — o destino final do seu capital é você quem decide.</p>
+        <p>Não importa se seu objetivo é usar a operação para construir caixa rápido no curto prazo ou se você enxerga uma profissão de longo prazo na indústria. Eu te ensino a mecânica e a operação real.</p>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- BASTIDORES & AUTORIDADE -->
-<section id="autoridade">
+<!-- SESSÃO 03: AUTORIDADE (ÂNCORA: MENTOR) -->
+<section id="mentor">
   <div class="wrap">
     <div class="authority">
       <div class="kicker">Bastidor Real & Autoridade</div>
@@ -664,44 +675,30 @@
       <p>Como <em>intern</em>, tive acesso direto a operações reais: acompanhei rotinas de tráfego, gestão de contratos, contato direto com profissionais do setor e participei ativamente de reuniões de discussão e otimização envolvendo parceiros do Google Ads e operações de grande porte no mercado de iGaming.</p>
       
       <p>Em vez de te ensinar apenas onde clicar no gerenciador, eu quero te mostrar como quem está dentro da cadeia pensa oferta, aquisição, tracking, números e otimização.</p>
-      
-      <p>No meu perfil do Instagram, exponho abertamente as entranhas da indústria: analiso cases reais, desmonto escândalos do setor e comento a dinâmica do mercado com a visão de quem esteve do lado de dentro. É por essa transparência técnica que grandes players e operadores da indústria acompanham o meu trabalho diariamente.</p>
 
       <div class="grid2" style="margin-top: 40px;">
-        <div class="proof">
-          PRINT CENSURADO<br><br>
-          GOOGLE & BLAZE<br>
-          REUNIÃO / OTIMIZAÇÃO
-        </div>
-        <div class="proof">
-          PRINT CENSURADO<br><br>
-          GOOGLE ADS CONSULTING
-        </div>
+        <div class="proof">PRINT CENSURADO<br><br>GOOGLE & BLAZE</div>
+        <div class="proof">PRINT CENSURADO<br><br>GOOGLE ADS CONSULTING</div>
       </div>
 
       <div class="micro" style="text-align: center; margin-top: 24px;">
-        Os materiais publicados possuem dados sensíveis preservados.<br>A presença em reuniões representa histórico profissional e não constitui endosso institucional direto.
+        Os materiais publicados possuem dados sensíveis preservados. A presença em reuniões representa histórico profissional.
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- CONTRATO E CPA (€20) -->
-<section>
+<!-- SESSÃO 04: O DIFERENCIAL (CPA) -->
+<section class="bg-alt">
   <div class="wrap">
     <div class="cpa">
       <div>
         <div class="kicker">Acesso Exclusivo</div>
         <h2>Você não precisa terminar a formação sem saber com quem operar.</h2>
-        
         <p style="margin-bottom: 16px; color: var(--text-main);">
           Alunos elegíveis terão acesso direto a uma condição comercial diferenciada em casa regulamentada, algo que pouquíssimas pessoas no mercado sequer sabem que existe.
         </p>
-        
-        <p>
-          A formação não termina em “boa sorte procurando oferta”. Você sai com a teoria, a prática e a porta aberta para operar.
-        </p>
+        <p>A formação não termina em “boa sorte procurando oferta”. Você sai com a teoria, a prática e a porta aberta para operar.</p>
       </div>
 
       <div class="cpa-box">
@@ -712,16 +709,14 @@
         </p>
       </div>
     </div>
-
     <div class="micro" style="text-align: center; margin-top: 24px;">
       *Sujeito a qualificação, aprovação do operador, critérios de aquisição válida e condições vigentes.
     </div>
   </div>
 </section>
 
-
-<!-- ESTRUTURA PRÁTICA (MÓDULOS) -->
-<section id="modulos" style="background: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+<!-- SESSÃO 05: MÓDULOS (ÂNCORA: MÓDULOS) -->
+<section id="modulos">
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">Estrutura Prática</div>
@@ -730,176 +725,55 @@
     </div>
 
     <div class="modules">
-      <div class="module">
-        <div class="num">01</div>
-        <div>
-          <b>Quem ganha dinheiro nesse mercado — e onde você entra</b>
-          <span>Operadora, afiliado, mídia, agência, gestores, modelos de remuneração e cadeia econômica.</span>
-        </div>
-      </div>
-
-      <div class="module">
-        <div class="num">02</div>
-        <div>
-          <b>Como anunciar sem viver apagando incêndio</b>
-          <span>Compliance, restrições, publicidade responsável e como estruturar campanhas respeitando as regras.</span>
-        </div>
-      </div>
-
-      <div class="module">
-        <div class="num">03</div>
-        <div>
-          <b>Antes de aceitar uma oferta, leia isso</b>
-          <span>CPA, RevShare, Hybrid, contratos, aquisição válida, tracking e pagamento.</span>
-        </div>
-      </div>
-
-      <div class="module">
-        <div class="num">04</div>
-        <div>
-          <b>A conta do iGaming revelada</b>
-          <span>Descubra quanto você pode pagar por aquisição antes de transformar campanha em prejuízo.</span>
-        </div>
-      </div>
-
-      <div class="module">
-        <div class="num">05</div>
-        <div>
-          <b>Onde comprar atenção</b>
-          <span>Canais, mídia, distribuição e estrutura de aquisição.</span>
-        </div>
-      </div>
-
-      <div class="module">
-        <div class="num">06</div>
-        <div>
-          <b>Por que alguém para, clica e confia</b>
-          <span>Público, criativo, ângulo, atenção, risco, prova e decisão.</span>
-        </div>
-      </div>
-
-      <div class="module">
-        <div class="num">07</div>
-        <div>
-          <b>Não jogue clique fora</b>
-          <span>Landing pages, prelanders, mensagem, continuidade e conversão.</span>
-        </div>
-      </div>
-
-      <div class="module">
-        <div class="num">08</div>
-        <div>
-          <b>Saiba exatamente de onde veio cada conversão</b>
-          <span>UTMs, IDs, eventos, atribuição, relatórios e conciliação.</span>
-        </div>
-      </div>
-
-      <div class="module">
-        <div class="num">09</div>
-        <div>
-          <b>Chega de otimizar no “acho”</b>
-          <span>Como descobrir onde está o problema e decidir o próximo movimento.</span>
-        </div>
-      </div>
-
-      <div class="module">
-        <div class="num">10</div>
-        <div>
-          <b>De campanha para operação</b>
-          <span>Processo, relatório, relacionamento com operador e escala com controle.</span>
-        </div>
-      </div>
+      <div class="module"><div class="num">01</div><div><b>Quem ganha dinheiro nesse mercado</b><span>Operadora, afiliado, mídia, agência, gestores, modelos de remuneração.</span></div></div>
+      <div class="module"><div class="num">02</div><div><b>Como anunciar sem viver apagando incêndio</b><span>Compliance, restrições e publicidade responsável.</span></div></div>
+      <div class="module"><div class="num">03</div><div><b>Antes de aceitar uma oferta, leia isso</b><span>CPA, RevShare, Hybrid, contratos e aquisição válida.</span></div></div>
+      <div class="module"><div class="num">04</div><div><b>A conta do iGaming revelada</b><span>Descubra quanto você pode pagar por aquisição antes de ter prejuízo.</span></div></div>
+      <div class="module"><div class="num">05</div><div><b>Onde comprar atenção</b><span>Canais, mídia, distribuição e estrutura de aquisição.</span></div></div>
+      <div class="module"><div class="num">06</div><div><b>Por que alguém para, clica e confia</b><span>Público, criativo, ângulo, atenção, risco, prova e decisão.</span></div></div>
+      <div class="module"><div class="num">07</div><div><b>Não jogue clique fora</b><span>Landing pages, prelanders, mensagem, continuidade e conversão.</span></div></div>
+      <div class="module"><div class="num">08</div><div><b>De onde veio cada conversão</b><span>UTMs, IDs, eventos, atribuição, relatórios e conciliação.</span></div></div>
+      <div class="module"><div class="num">09</div><div><b>Chega de otimizar no “acho”</b><span>Como descobrir onde está o problema e decidir o próximo movimento.</span></div></div>
+      <div class="module"><div class="num">10</div><div><b>De campanha para operação</b><span>Processo, relatório, relacionamento com operador e escala.</span></div></div>
     </div>
   </div>
 </section>
 
-
-<!-- VISÃO DE CARREIRA -->
-<section>
+<!-- SESSÃO 06: CARREIRA E PROVAS -->
+<section class="bg-alt">
   <div class="wrap">
     <div class="section-head center">
       <div class="kicker">Visão de Longo Prazo</div>
       <h2>E tem algo maior aqui</h2>
-      <p>Você pode entrar como afiliado e sair enxergando uma carreira.<br>O link é só a porta. Por trás dele existe uma indústria de aquisição digital.</p>
+      <p>Você pode entrar como afiliado e sair enxergando uma carreira. O link é só a porta.</p>
     </div>
 
-    <div class="career">
-      <span class="pill">Afiliado</span>
-      <span class="pill">Media Buyer</span>
-      <span class="pill">Creative Strategy</span>
-      <span class="pill">Affiliate Manager</span>
-      <span class="pill">Aquisição</span>
-      <span class="pill">Tracking</span>
-      <span class="pill">Operação</span>
-    </div>
-  </div>
-</section>
-
-
-<!-- PROVAS SOCIAIS -->
-<section style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">Transparência</div>
-      <h2>Não precisa confiar na minha palavra</h2>
-      <p>Veja quem acompanha e como o próprio mercado reage ao conteúdo.</p>
+    <div class="career" style="margin-bottom: 80px;">
+      <span class="pill">Afiliado</span><span class="pill">Media Buyer</span><span class="pill">Creative Strategy</span><span class="pill">Affiliate Manager</span><span class="pill">Aquisição</span><span class="pill">Tracking</span><span class="pill">Operação</span>
     </div>
 
     <div class="grid3">
-      <div class="card">
-        <div class="proof">
-          PRINT REAL<br>FEEDBACK
-        </div>
-        <h3>Conteúdo fundo de funil</h3>
-        <p>Espaço para feedback real sobre profundidade e nível técnico das análises.</p>
-      </div>
-
-      <div class="card">
-        <div class="proof">
-          PERFIL / MENÇÃO<br>AUTORIZADA
-        </div>
-        <h3>Gente do mercado acompanha</h3>
-        <p>Espaço para mostrar conexões públicas reais sem inventar endosso.</p>
-      </div>
-
-      <div class="card">
-        <div class="proof">
-          INSTAGRAM<br>ALL MARKETS / FUNDADOR
-        </div>
-        <h3>Veja antes de comprar</h3>
-        <p>Entre no perfil, veja o conteúdo e tire sua própria conclusão.</p>
-      </div>
+      <div class="card"><div class="proof">PRINT REAL<br>FEEDBACK</div><h3>Conteúdo fundo de funil</h3><p>Feedback real sobre profundidade e nível técnico das análises.</p></div>
+      <div class="card"><div class="proof">PERFIL / MENÇÃO</div><h3>Gente do mercado acompanha</h3><p>Conexões públicas reais sem inventar endosso.</p></div>
+      <div class="card"><div class="proof">INSTAGRAM<br>ALL MARKETS</div><h3>Veja antes de comprar</h3><p>Entre no perfil, veja o conteúdo e tire sua própria conclusão.</p></div>
     </div>
   </div>
 </section>
 
-
-<!-- OFERTA FINAL -->
+<!-- SESSÃO 07: OFERTA (ÂNCORA: OFERTA) -->
 <section id="oferta">
   <div class="wrap">
     <div class="offer">
       <div>
         <div class="kicker">Turma Fundadora</div>
         <h2>Pare de tentar descobrir sozinho como essa indústria funciona.</h2>
-        <p>Entre para a Sensitive Marketing Academy — iGaming Edition e aprenda a olhar o mercado como operador, não simplesmente como alguém com um link.</p>
+        <p>Entre para a Sensitive Marketing Academy e aprenda a olhar o mercado como operador.</p>
 
         <div class="checklist">
-          <div class="check">
-            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Formação operacional completa
-          </div>
-          <div class="check">
-            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Acesso ao ecossistema e análises de bastidor
-          </div>
-          <div class="check">
-            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Atualizações de conteúdo
-          </div>
-          <div class="check">
-            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Acesso à condição exclusiva de €20 por R$40 depositados
-          </div>
+          <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Formação operacional completa</div>
+          <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Acesso ao ecossistema e análises</div>
+          <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Atualizações de conteúdo</div>
+          <div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Contrato exclusivo de €20/R$40</div>
         </div>
       </div>
 
@@ -908,7 +782,7 @@
         <div class="price">R$697</div>
         <a href="#" class="btn" style="width: 100%;">Quero entrar para a Academy</a>
         <div class="micro" style="text-align: center; margin-top: 20px;">
-          Não há promessa ou garantia de renda. Resultados dependem de execução, capital, oferta, mercado e outras variáveis.
+          Não há promessa ou garantia de renda. Resultados dependem de execução.
         </div>
       </div>
     </div>
@@ -920,8 +794,7 @@
 <footer>
   <div class="wrap">
     <strong style="color: var(--text-main); font-weight: 600;">Sensitive Marketing Academy</strong><br>
-    Uma iniciativa All Markets.
-    <br><br>
+    Uma iniciativa All Markets.<br><br>
     Conteúdo educacional voltado à operação profissional em mercados regulados.
   </div>
 </footer>
