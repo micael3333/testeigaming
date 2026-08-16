@@ -84,7 +84,7 @@
     }
 
     .hero{
-      padding:76px 0 30px;
+      padding:60px 0 30px;
       text-align:center;
     }
 
@@ -100,20 +100,38 @@
     h1{
       max-width:960px;
       margin:18px auto;
-      font-size:clamp(40px,5.5vw,72px);
-      line-height:.98;
-      letter-spacing:-.05em;
+      font-size:clamp(32px,4.5vw,58px);
+      line-height:1.05;
+      letter-spacing:-.04em;
     }
 
-    h1 strong{
+    .hero-exclusivity{
+      max-width:850px;
+      margin:20px auto;
+      padding:16px 20px;
+      background:rgba(155,234,106,.06);
+      border:1px solid rgba(155,234,106,.2);
+      border-radius:14px;
+      color:#e2f7d5;
+      font-size:clamp(16px,2vw,20px);
+      font-weight:600;
+    }
+
+    .hero-exclusivity span{
+      display:block;
+      margin-top:6px;
+      font-size:13px;
       color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-weight:800;
     }
 
     .hero-sub{
       max-width:810px;
-      margin:0 auto;
+      margin:20px auto 0;
       color:#c8d0d9;
-      font-size:clamp(17px,2vw,21px);
+      font-size:clamp(16px,1.8vw,19px);
     }
 
     .video{
@@ -180,29 +198,15 @@
 
     h2{
       margin:9px 0 14px;
-      font-size:clamp(32px,4.5vw,55px);
-      line-height:1.01;
-      letter-spacing:-.05em;
+      font-size:clamp(28px,4vw,48px);
+      line-height:1.05;
+      letter-spacing:-.04em;
     }
 
     .section-head p{
       margin:0;
       color:var(--muted);
       font-size:17px;
-    }
-
-    .statement{
-      max-width:900px;
-      margin:auto;
-      text-align:center;
-      font-size:clamp(27px,3.5vw,40px);
-      line-height:1.17;
-      letter-spacing:-.035em;
-      font-weight:850;
-    }
-
-    .statement strong{
-      color:var(--accent);
     }
 
     .grid2,
@@ -248,17 +252,6 @@
       padding:20px;
     }
 
-    .pain{
-      border-left:2px solid var(--accent);
-      padding-left:20px;
-      font-size:19px;
-      color:#dce2e8;
-    }
-
-    .pain p{
-      color:var(--muted);
-    }
-
     .module{
       display:flex;
       gap:16px;
@@ -295,13 +288,14 @@
     }
 
     .authority h2{
-      max-width:780px;
+      max-width:850px;
     }
 
     .authority p{
-      max-width:780px;
+      max-width:850px;
       color:#aeb7c1;
-      font-size:18px;
+      font-size:17px;
+      margin-bottom:16px;
     }
 
     .cpa{
@@ -402,17 +396,13 @@
       }
 
       h1{
-        font-size:42px;
+        font-size:32px;
       }
     }
 
     @media(max-width:520px){
       section{
         padding:55px 0;
-      }
-
-      h1{
-        font-size:35px;
       }
 
       .wrap{
@@ -459,21 +449,20 @@
   <div class="wrap">
 
     <div class="eyebrow">
-      iGaming Edition · Turma Fundadora
+      iGaming Edition · Formação Operacional
     </div>
 
     <h1>
-      PARE DE PERDER DINHEIRO SUBINDO CAMPANHA NO ESCURO.
-      <br><br>
-      Aprenda a operar no iGaming com quem senta na mesa com o Google para otimizar as maiores casas do mercado — 
-      <strong>e saia do curso com acesso a uma oferta exclusiva de €20 por depósito.</strong>
+      Aprenda a operar no iGaming com quem senta na mesa com o Google para otimizar as maiores casas do mercado
     </h1>
 
+    <div class="hero-exclusivity">
+      E saia do curso com acesso a um contrato exclusivo com casa regulamentada onde ganha <strong>€20 por 40 reais depositados</strong>.
+      <span>🔒 Acessorestrito: Pouquíssimas pessoas no mercado sabem que essa estrutura existe</span>
+    </div>
+
     <p class="hero-sub">
-      Entenda como o dinheiro circula no iGaming, escolha ofertas melhores,
-      leia contratos, encontre públicos, construa campanhas dentro das regras
-      e aprenda a saber quando você está perdendo dinheiro —
-      e quando existe espaço para escalar.
+      Entenda como o dinheiro circula no iGaming, escolha ofertas melhores, leia contratos, encontre públicos, construa campanhas dentro das regras e aprenda a saber quando você está perdendo dinheiro — e quando existe espaço para escalar.
     </p>
 
   </div>
@@ -499,7 +488,7 @@
     </a>
 
     <div class="micro">
-      Formação profissional. Sem promessa de renda. Sem “método secreto”.
+      Formação profissional. Sem promessa de renda fácil. Sem “método secreto”.
     </div>
 
   </div>
@@ -507,78 +496,44 @@
 </section>
 
 
-<!-- TESE -->
+<!-- PARA QUEM É O CURSO -->
 
-<section>
-
-  <div class="wrap">
-
-    <div class="statement">
-      O problema nunca foi conseguir um link.
-      <br><br>
-      O problema é saber
-      <strong>qual oferta aceitar, quanto pagar por tráfego,
-      onde está sua conversão e se essa conta realmente dá dinheiro.</strong>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- EMPATIA -->
-
-<section>
+<section style="border-top: 1px solid var(--line);">
 
   <div class="wrap">
 
-    <div class="section-head">
+    <div class="section-head center">
 
       <div class="kicker">
-        Eu já estive desse lado
+        Público & Alinhamento
       </div>
 
       <h2>
-        É fácil achar gente mostrando faturamento. Difícil é alguém mostrar a operação.
+        Para quem é esta formação?
       </h2>
+
+      <p>
+        Seja qual for o seu momento, o requisito fundamental é encarar este mercado como uma indústria real.
+      </p>
 
     </div>
 
 
-    <div class="pain">
+    <div class="grid2">
 
-      <p>
-        Eu sei como é entrar nesse mercado e sentir que todo mundo parece saber
-        alguma coisa que você não sabe.
-      </p>
+      <div class="card">
+        <h3>Do Iniciante ao Avançado</h3>
+        <p>
+          Serve para quem está tentando entrar no mercado agora do jeito certo, ou para quem já opera, mas sofreu calotes de casas não regulamentadas, teve repasses cortados ou não consegue entender a matemática do tráfego.
+        </p>
+      </div>
 
-      <p>
-        Você recebe uma oferta. Um link. Algumas regras.
-        Coloca dinheiro em tráfego e começa a tentar entender sozinho
-        se está fazendo alguma coisa certa.
-      </p>
-
-      <p>
-        Aí aparecem as perguntas que ninguém responde direito:
-      </p>
-
-      <strong>
-        Esse CPA é bom?
-        Minha conversão foi contabilizada?
-        Quanto eu posso gastar?
-        Essa cláusula do contrato pode me prejudicar?
-        Eu escalo essa campanha ou desligo?
-      </strong>
-
-      <p>
-        Quando comecei como intern na operação, me vi diante de planilhas gigantes,
-        contratos complexos e reuniões com operadores sem entender metade das siglas.
-        Foi aprendendo no campo de batalha que entendi como as peças se encaixam.
-      </p>
-
-      <p>
-        E é exatamente esse caminho que eu quero encurtar para você.
-      </p>
+      <div class="card">
+        <h3>Carreira ou Levantamento de Caixa</h3>
+        <p>
+          Não importa se seu objetivo é usar a operação para construir caixa rápido no curto prazo ou se você enxerga uma profissão de longo prazo na indústria. Eu te ensino a mecânica e a operação real — o destino final do seu capital é você quem decide.
+        </p>
+      </div>
 
     </div>
 
@@ -587,7 +542,7 @@
 </section>
 
 
-<!-- AUTORIDADE GOOGLE -->
+<!-- BASTIDORES & AUTORIDADE -->
 
 <section>
 
@@ -596,7 +551,7 @@
     <div class="authority">
 
       <div class="kicker">
-        Bastidor real
+        Bastidor Real & Autoridade
       </div>
 
       <h2>
@@ -604,16 +559,15 @@
       </h2>
 
       <p>
-        Como intern, tive acesso direto a operações reais:
-        acompanhei rotinas de tráfego, gestão de contratos, contato com profissionais do setor
-        e participei de reuniões de discussão e otimização envolvendo parceiros do Google Ads
-        e operações de grande porte no mercado de iGaming.
+        Como <em>intern</em>, tive acesso direto a operações reais: acompanhei rotinas de tráfego, gestão de contratos, contato direto com profissionais do setor e participei ativamente de reuniões de discussão e otimização envolvendo parceiros do Google Ads e operações de grande porte no mercado de iGaming.
       </p>
 
       <p>
-        Em vez de te ensinar apenas onde clicar no gerenciador,
-        eu quero te mostrar como quem está dentro da cadeia pensa
-        oferta, aquisição, tracking, números e otimização.
+        Em vez de te ensinar apenas onde clicar no gerenciador, eu quero te mostrar como quem está dentro da cadeia pensa oferta, aquisição, tracking, números e otimização.
+      </p>
+
+      <p>
+        No meu perfil do Instagram, exponho abertamente as entranhas da indústria: analiso cases reais, desmonto escândalos do setor e comento a dinâmica do mercado com a visão de quem esteve do lado de dentro. É por essa transparência técnica que grandes players e operadores da indústria acompanham o meu trabalho diariamente.
       </p>
 
       <div class="grid2" style="margin-top:25px;">
@@ -632,8 +586,7 @@
       </div>
 
       <div class="micro">
-        Os materiais publicados devem ter dados pessoais e informações confidenciais removidos.
-        A presença em reuniões não representa endosso do Google à formação.
+        Os materiais publicados possuem dados sensíveis preservados. A presença em reuniões representa histórico profissional e não constitui endosso institucional direto.
       </div>
 
     </div>
@@ -643,92 +596,7 @@
 </section>
 
 
-<!-- O QUE VAI APRENDER -->
-
-<section>
-
-  <div class="wrap">
-
-    <div class="section-head">
-
-      <div class="kicker">
-        Sem floreio
-      </div>
-
-      <h2>
-        O que você realmente vai aprender.
-      </h2>
-
-      <p>
-        A formação é dividida em blocos práticos para você parar de depender da sorte.
-      </p>
-
-    </div>
-
-
-    <div class="grid2">
-
-      <div class="card">
-        <h3>1. Como o mercado realmente funciona</h3>
-        <p>
-          Entenda quem ganha dinheiro na cadeia, como as plataformas operam,
-          a diferença real entre modelos (CPA, RevShare, Híbrido) e como parar de aceitar propostas ruins.
-        </p>
-      </div>
-
-
-      <div class="card">
-        <h3>2. Análise de contrato e regras</h3>
-        <p>
-          Aprenda a ler as letras miúdas de contratos de afiliados para entender o que é uma conversão válida,
-          quais restrições existem e como evitar o bloqueio de repasses.
-        </p>
-      </div>
-
-
-      <div class="card">
-        <h3>3. Matemática da campanha</h3>
-        <p>
-          Calcule seu Payout limite, entenda a taxa de conversão real,
-          descubra seu break-even e saiba exatamente quando cortar uma campanha ou escalar.
-        </p>
-      </div>
-
-
-      <div class="card">
-        <h3>4. Tráfego, públicos e criativos</h3>
-        <p>
-          Saiba como encontrar o público certo para cada oferta, estruturar anúncios dentro do compliance
-          e criar mensagens que convertem sem promessas enganosas.
-        </p>
-      </div>
-
-
-      <div class="card">
-        <h3>5. Tracking e Atribuição</h3>
-        <p>
-          Aprenda a configurar parâmetros, UTMs e utilizar ferramentas para garantir
-          que cada clique e cada conversão sejam rastreados com precisão.
-        </p>
-      </div>
-
-
-      <div class="card">
-        <h3>6. Otimização e Escala</h3>
-        <p>
-          Descubra como ler relatórios, identificar gargalos no funil, testar novos canais
-          e escalar suas campanhas de forma sustentável.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- CPA -->
+<!-- CONTRATO E CPA (€20) -->
 
 <section>
 
@@ -739,7 +607,7 @@
       <div>
 
         <div class="kicker">
-          E existe uma diferença importante
+          Acesso Exclusivo
         </div>
 
         <h2>
@@ -747,13 +615,11 @@
         </h2>
 
         <p style="color:var(--muted);font-size:17px;">
-          Alunos elegíveis poderão participar de processo de qualificação
-          para oportunidades comerciais disponibilizadas através da rede da Academy.
+          Alunos elegíveis terão acesso direto a uma condição comercial diferenciada em casa regulamentada, algo que pouquíssimas pessoas no mercado sequer sabem que existe.
         </p>
 
         <p style="color:var(--muted);">
-          Isso significa que a formação não termina em:
-          “agora boa sorte procurando uma oferta”.
+          A formação não termina em “boa sorte procurando oferta”. Você sai com a teoria, a prática e a porta aberta para operar.
         </p>
 
       </div>
@@ -766,11 +632,11 @@
         </div>
 
         <div class="cpa-title">
-          CPA por aquisição válida*
+          Por R$ 40 depositados*
         </div>
 
         <p style="color:var(--muted);">
-          + possibilidade de Revenue Share conforme a condição comercial aplicável.
+          CPA em casa regulamentada + possibilidade de Revenue Share conforme a condição comercial.
         </p>
 
       </div>
@@ -778,9 +644,7 @@
     </div>
 
     <div class="micro">
-      *Sujeito a qualificação, aprovação do operador,
-      critérios de aquisição válida e condições vigentes.
-      Não há garantia de aprovação ou resultado financeiro.
+      *Sujeito a qualificação, aprovação do operador, critérios de aquisição válida e condições vigentes.
     </div>
 
   </div>
@@ -788,7 +652,7 @@
 </section>
 
 
-<!-- MÓDULOS -->
+<!-- O CURSO SEM NOME DE MATÉRIA DE FACULDADE (CONTEÚDO) -->
 
 <section>
 
@@ -797,7 +661,7 @@
     <div class="section-head">
 
       <div class="kicker">
-        Do zero à operação
+        Estrutura Prática
       </div>
 
       <h2>
@@ -805,7 +669,7 @@
       </h2>
 
       <p>
-        Cada etapa responde uma pergunta que aparece quando dinheiro real entra na operação.
+        Cada etapa responde a uma pergunta real que surge quando seu dinheiro entra na operação.
       </p>
 
     </div>
@@ -818,8 +682,7 @@
         <div>
           <b>Quem ganha dinheiro nesse mercado — e onde você entra</b>
           <span>
-            Operadora, afiliado, mídia, agência, gestores,
-            modelos de remuneração e cadeia econômica.
+            Operadora, afiliado, mídia, agência, gestores, modelos de remuneração e cadeia econômica.
           </span>
         </div>
       </div>
@@ -830,8 +693,7 @@
         <div>
           <b>Como anunciar sem viver apagando incêndio</b>
           <span>
-            Compliance, restrições, publicidade responsável
-            e como estruturar campanhas respeitando as regras.
+            Compliance, restrições, publicidade responsável e como estruturar campanhas respeitando as regras.
           </span>
         </div>
       </div>
@@ -842,8 +704,7 @@
         <div>
           <b>Antes de aceitar uma oferta, leia isso</b>
           <span>
-            CPA, RevShare, Hybrid, contratos,
-            aquisição válida, tracking e pagamento.
+            CPA, RevShare, Hybrid, contratos, aquisição válida, tracking e pagamento.
           </span>
         </div>
       </div>
@@ -854,8 +715,7 @@
         <div>
           <b>A conta do iGaming revelada</b>
           <span>
-            Descubra quanto você pode pagar por aquisição
-            antes de transformar campanha em prejuízo.
+            Descubra quanto você pode pagar por aquisição antes de transformar campanha em prejuízo.
           </span>
         </div>
       </div>
@@ -877,8 +737,7 @@
         <div>
           <b>Por que alguém para, clica e confia</b>
           <span>
-            Público, criativo, ângulo, atenção,
-            risco, prova e decisão.
+            Público, criativo, ângulo, atenção, risco, prova e decisão.
           </span>
         </div>
       </div>
@@ -889,8 +748,7 @@
         <div>
           <b>Não jogue clique fora</b>
           <span>
-            Landing pages, prelanders, mensagem,
-            continuidade e conversão.
+            Landing pages, prelanders, mensagem, continuidade e conversão.
           </span>
         </div>
       </div>
@@ -901,8 +759,7 @@
         <div>
           <b>Saiba exatamente de onde veio cada conversão</b>
           <span>
-            UTMs, IDs, eventos,
-            atribuição, relatórios e conciliação.
+            UTMs, IDs, eventos, atribuição, relatórios e conciliação.
           </span>
         </div>
       </div>
@@ -913,8 +770,7 @@
         <div>
           <b>Chega de otimizar no “acho”</b>
           <span>
-            Como descobrir onde está o problema
-            e decidir o próximo movimento.
+            Como descobrir onde está o problema e decidir o próximo movimento.
           </span>
         </div>
       </div>
@@ -925,8 +781,7 @@
         <div>
           <b>De campanha para operação</b>
           <span>
-            Processo, relatório, relacionamento com operador
-            e escala com controle.
+            Processo, relatório, relacionamento com operador e escala com controle.
           </span>
         </div>
       </div>
@@ -938,7 +793,7 @@
 </section>
 
 
-<!-- CARREIRA -->
+<!-- VISÃO DE CARREIRA -->
 
 <section>
 
@@ -947,16 +802,16 @@
     <div class="section-head center">
 
       <div class="kicker">
-        E tem algo maior aqui
+        Visão de Longo Prazo
       </div>
 
       <h2>
-        Você pode entrar como afiliado e sair enxergando uma carreira.
+        E tem algo maior aqui
       </h2>
 
       <p>
-        O link é só a porta.
-        Por trás dele existe uma indústria de aquisição digital.
+        Você pode entrar como afiliado e sair enxergando uma carreira.<br>
+        O link é só a porta. Por trás dele existe uma indústria de aquisição digital.
       </p>
 
     </div>
@@ -979,7 +834,7 @@
 </section>
 
 
-<!-- PROVAS SOCIAIS -->
+<!-- PROVAS SOCIAIS & RECONHECIMENTO -->
 
 <section>
 
@@ -988,12 +843,16 @@
     <div class="section-head">
 
       <div class="kicker">
-        Não precisa confiar na minha palavra
+        Transparência
       </div>
 
       <h2>
-        Veja quem acompanha e como o próprio mercado reage ao conteúdo.
+        Não precisa confiar na minha palavra
       </h2>
+
+      <p>
+        Veja quem acompanha e como o próprio mercado reage ao conteúdo.
+      </p>
 
     </div>
 
@@ -1012,8 +871,7 @@
         </h3>
 
         <p>
-          Espaço para feedback real sobre profundidade
-          e nível técnico das análises.
+          Espaço para feedback real sobre profundidade e nível técnico das análises.
         </p>
 
       </div>
@@ -1031,8 +889,7 @@
         </h3>
 
         <p>
-          Espaço para mostrar conexões públicas reais
-          sem inventar endosso.
+          Espaço para mostrar conexões públicas reais sem inventar endosso.
         </p>
 
       </div>
@@ -1050,8 +907,7 @@
         </h3>
 
         <p>
-          Entre no perfil, veja o conteúdo
-          e tire sua própria conclusão.
+          Entre no perfil, veja o conteúdo e tire sua própria conclusão.
         </p>
 
       </div>
@@ -1063,64 +919,7 @@
 </section>
 
 
-<!-- KIT -->
-
-<section>
-
-  <div class="wrap">
-
-    <div class="section-head">
-
-      <div class="kicker">
-        Affiliate Operator Kit
-      </div>
-
-      <h2>
-        Porque aula sem ferramenta vira anotação esquecida.
-      </h2>
-
-    </div>
-
-
-    <div class="grid2">
-
-      <div class="card">
-
-        <div class="checklist">
-
-          <div class="check">Calculadora de campanhas</div>
-          <div class="check">Planilha de unit economics</div>
-          <div class="check">Checklist para leitura de contrato</div>
-          <div class="check">Checklist de compliance</div>
-          <div class="check">Estrutura de tracking</div>
-
-        </div>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="checklist">
-
-          <div class="check">Modelo de UTMs e SubIDs</div>
-          <div class="check">Matriz de criativos</div>
-          <div class="check">Briefing de anúncio</div>
-          <div class="check">Modelo de relatório</div>
-          <div class="check">Checklist antes de colocar dinheiro em mídia</div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- OFERTA -->
+<!-- OFERTA FINAL -->
 
 <section id="oferta">
 
@@ -1139,19 +938,16 @@
         </h2>
 
         <p style="color:var(--muted);font-size:17px;">
-          Entre para a Sensitive Marketing Academy — iGaming Edition
-          e aprenda a olhar o mercado como operador,
-          não simplesmente como alguém com um link.
+          Entre para a Sensitive Marketing Academy — iGaming Edition e aprenda a olhar o mercado como operador, não simplesmente como alguém com um link.
         </p>
 
 
         <div class="checklist">
 
-          <div class="check">Formação completa</div>
-          <div class="check">Affiliate Operator Kit</div>
+          <div class="check">Formação operacional completa</div>
+          <div class="check">Acesso ao ecossistema e análises de bastidor</div>
           <div class="check">Atualizações de conteúdo</div>
-          <div class="check">Materiais operacionais</div>
-          <div class="check">Possibilidade de qualificação para oportunidades comerciais</div>
+          <div class="check">Acesso à condição exclusiva de €20 por R$40 depositados</div>
 
         </div>
 
@@ -1173,9 +969,7 @@
         </a>
 
         <div class="micro">
-          Não há promessa ou garantia de renda.
-          Resultados dependem de execução, capital,
-          oferta, mercado e outras variáveis.
+          Não há promessa ou garantia de renda. Resultados dependem de execução, capital, oferta, mercado e outras variáveis.
         </div>
 
       </div>
@@ -1201,8 +995,7 @@
 
     <br><br>
 
-    Conteúdo educacional voltado à operação profissional
-    em mercados regulados.
+    Conteúdo educacional voltado à operação profissional em mercados regulados.
 
   </div>
 
